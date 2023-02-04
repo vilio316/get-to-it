@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List App</title>
+    <script src="todoscript.js" defer></script>
+    <link rel="stylesheet" href="todo.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit">
+</head>
+<body>
+    <div class="container">
+        <div class="holder">
+        <div id="theme-slider" style="justify-content: flex-start">
+            <div id="slider"><img src="" id="theme"></div>
+            </div>
+            </div>
+        <div class="header">
+    <p id="brand-name">Get To It!!!</p>
+    <p id="subtitle">The Number 1 To Do List App for all your needs</p>
+        </div>
+    <a class="center" id="welcome" href="index.html" target="_blank">Good Day</a>
+    <p class="center">What are we doing today?</p>
+    <section style="overflow: auto; height: 45%;">
+    <section class="category">
+        <header class="task-type">
+            <p>Tasks To Do</p>
+            <span class="badge"></span>
+        </header>
+        <div class="task-drop none">
+            <ul class="tasks">
+              <li><div>
+                <div class="flex">
+                <span class="task-head">Jump with the kids</span>
+                <div><button>Mark As Done</button> <button>Delete</button></div>
+                </div>
+            <div class="task-description none">The kids are going bungee jumping on Saturday. Go with them!</div>
+            </div>
+        </li> 
+              <li>
+                <div>
+                <div class="flex">
+                <span class="task-head">Fly a plane</span>
+                <div><button>Mark As Done</button> <button>Delete</button></div>
+                </div>
+                <div class="task-description none">Fly your new plane in Final Fantasy XIV</div>
+            </div>
+        </li>
+              <li>
+                <div>
+                   <div class="flex">
+                    <span class="task-head">Attend today's saxophone class</span>
+                    <div><button>Mark As Done</button> <button>Delete</button></div>
+                </div>
+                    <div class="task-description none">Learn to play Sax Like Jax</div>
+                </div>
+            </li>
+              <li>
+                <div>
+                    <div class="flex">
+                <span class="task-head">Dioscorea Esculentum</span>
+                <div><button>Mark As Done</button> <button>Delete</button></div>
+                </div>
+                <div class="task-description none">Botanical Name for Yam</div>
+            </div>
+            </li>
+            </ul>
+        </div>
+    </section>
+    <section class="category">
+        <header class="task-type">
+            <p>Done</p>
+            <span class="badge"></span>
+        </header>
+        <div class="task-drop none">
+            <ul class="tasks">
+              <li><div>
+                <div class="task-head">Jump with the kids</div>
+                <div class="task-description none">Jump at the trampoline park with Will and Grace</div>
+            </li> 
+              <li>
+                <div>
+                <span class="task-head">Fly a planeta</span>
+                <div class="task-description none">A planeta is a thing you need to fly.</div>
+            </div>
+            </li>
+            </ul>
+        </div>
+    </section>
+    <section>
+    <div class="task-details" id="task-create" style="display: none;">
+        <label>Add New Task</label>
+        <input type="text" name="text" id="task-name" placeholder="Task Name">
+        <label>Task Description</label>
+        <textarea name="task-desc" placeholder="Task Description Here (optional)" style="resize: none;"></textarea>
+        <button style="margin: 0 30%;">Add Task</button>
+    </div>
+    </section>
+    </section>
+    <div class="button-container">
+        <button id="new-task" title="New Task">+</button>
+        </div>
+    </div>
+</body>
+</html>
