@@ -50,6 +50,10 @@ header{
     font-size: 2rem;
     font-weight: bold;
 }
+
+.between{
+    justify-content: space-between;
+}
 section{
     padding: 0.4rem 1.5rem;
 }
@@ -75,7 +79,8 @@ section{
     justify-content: flex-end;
 }
 .task-type{
-    display: flex; gap: 1.5rem;
+    display: flex;
+    justify-content: space-between;
 }
 .category{
     border-radius: 2rem;

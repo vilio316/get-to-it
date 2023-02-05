@@ -7,6 +7,9 @@ for (let i = 0; i < badges.length; i++) {
 }
 }
 badgeUpdate();
+
+let taskContainer= document.getElementById("todo");
+let doneContainer = document.getElementById("done");
 let newTask= document.getElementById("new-task")
 newTask.addEventListener('click', ()=> {
     let tasks= document.getElementById("task-create");
@@ -37,6 +40,8 @@ let tasks_done= document.querySelector("#done");
 
 //Tracking The Buttons
 let done_button = document.querySelectorAll(".madone");
+let taskChildren;
+let tasks_classless = document.querySelectorAll(".task");
 for (let i = 0; i < done_button.length; i++) {
     done_button[i].textContent = "Mark as Done";
     
@@ -44,14 +49,27 @@ for (let i = 0; i < done_button.length; i++) {
     done_button[i].addEventListener("click", ()=> {
         if(done_button[i].textContent == "Mark as Done"){
             done_button[i].textContent = "Mark as Undone";
-            tasks_done.appendChild(taskheaders[i].parentNode.parentNode.parentNode);
-            badgeUpdate();
+            tasks_done.appendChild(tasks_classless[i]);
         }
         else{done_button[i].textContent = "Mark as Done";
-        tasks_undone.appendChild(taskheaders[i].parentNode.parentNode.parentNode);
-        badgeUpdate();
+        tasks_undone.appendChild(tasks_classless[i]);
     }
+    badgeUpdate();
     })
+}
+
+let delete_button = document.querySelectorAll(".delete");
+for(let j=0; j < delete_button.length; j++){
+    
+    delete_button[j].onclick = ()=> {
+        taskChildren = Array.from(taskContainer.children);
+        let task_pos = taskChildren.indexOf(tasks_classless[j])
+        if(task_pos !== -1){
+       taskContainer.removeChild(tasks_classless[j]);
+        }
+        else{ doneContainer.removeChild(tasks_classless[j]);}
+    badgeUpdate();
+    }
 }
 
 //Task Category Div Code
