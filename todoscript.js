@@ -7,15 +7,23 @@ for (let i = 0; i < badges.length; i++) {
 }
 }
 badgeUpdate();
+//
 
+//To Do and Done Lists
 let taskContainer= document.getElementById("todo");
 let doneContainer = document.getElementById("done");
+//
+
+//"New Task" button
 let newTask= document.getElementById("new-task")
 newTask.addEventListener('click', ()=> {
     let tasks= document.getElementById("task-create");
-    if(tasks.style.display == "none") {tasks.style.display = "block";}
-    else{tasks.style.display= "none";}
+    if(tasks.className.indexOf("show") == -1) {tasks.classList.replace("none","show")}
+    else{tasks.classList.replace("show", "none")}
 })
+//
+
+//Theme Slider
 let slider= document.getElementById("slider");
 let themePicture= document.getElementById("theme");
 themePicture.src= "sun-solid.svg"
@@ -33,6 +41,7 @@ slider.addEventListener('click', ()=> {
     }
 }
 )
+//
 
 //Deletion and Movement Logic
 let tasks_undone= document.querySelector("#todo");
@@ -60,7 +69,7 @@ for (let i = 0; i < done_button.length; i++) {
 
 let delete_button = document.querySelectorAll(".delete");
 for(let j=0; j < delete_button.length; j++){
-    
+    delete_button[j].textContent= "Delete";
     delete_button[j].onclick = ()=> {
         taskChildren = Array.from(taskContainer.children);
         let task_pos = taskChildren.indexOf(tasks_classless[j])
@@ -71,6 +80,7 @@ for(let j=0; j < delete_button.length; j++){
     badgeUpdate();
     }
 }
+//
 
 //Task Category Div Code
 let category = document.querySelectorAll(".task-type");
@@ -103,3 +113,45 @@ else{taskbodies[b].classList.replace("show", "none")}
 }
 )
 }
+//
+
+//
+let close_button =document.querySelector("#close_button");
+close_button.addEventListener("click", ()=> {
+    let tasks= document.getElementById("task-create");
+    if(tasks.className.includes('show')) {tasks.classList.replace("show","none")}
+})
+
+// Adding New Tasks with The Add Task Button
+let  makeTask = document.querySelector("#make-task");
+makeTask.addEventListener("click", ()=> {
+    let task_name = document.getElementById("task-name");
+    let task_description = document.getElementById("task-desc");
+
+    //Creating the "Task Tree":
+    let li_task = document.createElement("li");
+    li_task.classList.add("task");
+
+    let div_1 = document.createElement("div");
+    
+    let div_flexBetween = document.createElement("div");
+     div_flexBetween.classList.add("flex"); div_flexBetween.classList.add("between")
+    let span_taskHead = document.createElement("span"); span_taskHead.classList.add("task-head")
+    span_taskHead.textContent= task_name.value;
+
+    let div_2 = document.createElement('div');
+    let button_madone = document.createElement("button"); button_madone.classList.add("madone");
+    let button_delete = document.createElement("button"); button_delete.classList.add("delete");
+
+    let div_taskDescription = document.createElement("div"); 
+    div_taskDescription.classList.add("task-description"); div_taskDescription.classList.add("none")
+    div_taskDescription.textContent= task_description.value;
+
+    div_2.appendChild(button_madone); div_2.appendChild(button_delete);
+div_flexBetween.appendChild(span_taskHead); div_flexBetween.appendChild(div_2);
+div_1.appendChild(div_flexBetween); div_1.appendChild(div_taskDescription);
+li_task.appendChild(div_1);
+console.log(li_task);
+tasks_undone.appendChild(li_task);
+badgeUpdate();
+})

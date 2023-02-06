@@ -36,7 +36,7 @@
                             <div>
                                 <div class="flex between">
                                     <span class="task-head">Jump with the kids</span>
-                                    <div><button class="madone"></button> <button class="delete">Delete</button></div>
+                                    <div><button class="madone"></button> <button class="delete"></button></div>
                                 </div>
                                 <div class="task-description none">The kids are going bungee jumping on Saturday. Go
                                     with them!</div>
@@ -46,7 +46,7 @@
                             <div>
                                 <div class="flex between">
                                     <span class="task-head">Fly a plane</span>
-                                    <div><button class="madone"></button> <button class="delete">Delete</button></div>
+                                    <div><button class="madone"></button> <button class="delete"></button></div>
                                 </div>
                                 <div class="task-description none">Fly your new plane in Final Fantasy XIV</div>
                             </div>
@@ -55,7 +55,7 @@
                             <div>
                                 <div class="flex between">
                                     <span class="task-head">Attend today's saxophone class</span>
-                                    <div><button class="madone"></button> <button class="delete">Delete</button></div>
+                                    <div><button class="madone"></button> <button class="delete"></button></div>
                                 </div>
                                 <div class="task-description none">Learn to play Sax Like Jax</div>
                             </div>
@@ -64,7 +64,7 @@
                             <div>
                                 <div class="flex between">
                                     <span class="task-head">Dioscorea Esculentum</span>
-                                    <div><button class="madone"></button> <button class="delete">Delete</button></div>
+                                    <div><button class="madone"></button> <button class="delete"></button></div>
                                 </div>
                                 <div class="task-description none">Botanical Name for Yam</div>
                             </div>
@@ -82,16 +82,22 @@
                     </ul>
                 </div>
             </section>
+
+            <!--Task Create Div Here-->
             <section>
-                <div class="task-details" id="task-create" style="display: none;">
+                <div class="task-details none" id="task-create">
+                    <span id="close_button" style="display: block; text-align: right; font-size: 1.5rem;">X</span>
                     <label>Add New Task</label>
                     <input type="text" name="text" id="task-name" placeholder="Task Name">
                     <label>Task Description</label>
-                    <textarea name="task-desc" placeholder="Task Description Here (optional)"
+                    <textarea id="task-desc" placeholder="Task Description Here (optional)"
                         style="resize: none;"></textarea>
-                    <button style="margin: 0 30%;">Add Task</button>
+                    <div class="flex" style="justify-content: center;">
+                        <button id="make-task">Add Task</button>
+                        </div>
                 </div>
             </section>
+            <!-- End -->
         </section>
         <div class="button-container">
             <button id="new-task" title="New Task">+</button>
