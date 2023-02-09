@@ -1,6 +1,6 @@
 div.container{
     width: 80vw;
-    height: 90vh;
+    height: 80vh;
     margin: auto;
     background-color: antiquewhite;
     border-radius: 1.5rem;
@@ -8,7 +8,7 @@ div.container{
     font-family: "Kanit", serif;
     position: relative;
     padding: 1rem;
-    overflow: auto;
+    overflow-y: auto;
 }
 .header{
     display: block;
