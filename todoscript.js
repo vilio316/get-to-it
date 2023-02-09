@@ -75,6 +75,7 @@ else{taskbodies[b].classList.replace("show", "none")}
 })
 }
 }
+descUpdate();
 //
 
 //"New Task" button
