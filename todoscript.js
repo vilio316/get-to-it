@@ -66,13 +66,13 @@ deleteUpdate();
 
 //Task Headers
 function descUpdate(){
-let taskheaders = document.querySelectorAll(".task-head");
+    let taskheaders = document.querySelectorAll(".task-head");
 let taskbodies = document.querySelectorAll(".task-description");
 for (let b = 0 ; b < taskheaders.length; b++) {
-taskheaders[b].addEventListener("click", ()=>{
+taskheaders[b].onclick = ()=>{
     if(taskbodies[b].className.indexOf("show") == -1){taskbodies[b].classList.replace("none", "show")}
 else{taskbodies[b].classList.replace("show", "none")}
-})
+}
 }
 }
 descUpdate();
