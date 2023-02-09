@@ -11,29 +11,42 @@ badgeUpdate();
 
 // Movement, Delete Logic
 let tasks_undone= document.querySelector("#todo");
-let tasks_done= document.querySelector("#done");
+let 
+tasks_done= document.querySelector("#done");
+let tasks_classless;
+//
+
+//To Do and Done Lists
+let taskContainer= document.getElementById("todo");
+let doneContainer = document.getElementById("done");
 //
 
 //Tracking The Buttons
+ function doneUpdate(){
 let done_button = document.querySelectorAll(".madone");
-let taskChildren;
-let tasks_classless = document.querySelectorAll(".task");
+tasks_classless= document.querySelectorAll(".task");
 for (let i = 0; i < done_button.length; i++) {
     done_button[i].textContent = "Mark as Done";
-     // Listeners for Category Switching Here:
-    done_button[i].addEventListener("click", ()=> {
+    done_button[i].onclick= ()=> {
         if(done_button[i].textContent == "Mark as Done"){
             done_button[i].textContent = "Mark as Undone";
             tasks_done.appendChild(tasks_classless[i]);
+          
         }
-        else{done_button[i].textContent = "Mark as Done";
-        tasks_undone.appendChild(tasks_classless[i]);
+        else{
+            done_button[i].textContent = "Mark as Done";
+            tasks_undone.appendChild(tasks_classless[i]);
     }
     badgeUpdate();
-    })
+    }
 }
+}
+doneUpdate();
 
-let delete_button = document.querySelectorAll(".delete");
+let taskChildren;
+function deleteUpdate(){
+    let delete_button = document.querySelectorAll(".delete");
+    tasks_classless= document.querySelectorAll(".task");
 for(let j=0; j < delete_button.length; j++){
     delete_button[j].textContent= "Delete";
     delete_button[j].onclick = ()=> {
@@ -46,7 +59,8 @@ for(let j=0; j < delete_button.length; j++){
     badgeUpdate();
     }
 }
-
+}
+deleteUpdate();
 //
 
 
@@ -61,12 +75,6 @@ else{taskbodies[b].classList.replace("show", "none")}
 })
 }
 }
-//
-
-
-//To Do and Done Lists
-let taskContainer= document.getElementById("todo");
-let doneContainer = document.getElementById("done");
 //
 
 //"New Task" button
@@ -147,7 +155,9 @@ makeTask.addEventListener("click", ()=> {
 
     let div_2 = document.createElement('div');
     let button_madone = document.createElement("button"); button_madone.classList.add("madone");
+    button_madone.textContent= "Mark As Done"
     let button_delete = document.createElement("button"); button_delete.classList.add("delete");
+    button_delete.textContent= "Delete"
 
     let div_taskDescription = document.createElement("div"); 
     div_taskDescription.classList.add("task-description"); div_taskDescription.classList.add("none")
@@ -158,9 +168,12 @@ div_flexBetween.appendChild(span_taskHead); div_flexBetween.appendChild(div_2);
 div_1.appendChild(div_flexBetween); div_1.appendChild(div_taskDescription);
 li_task.appendChild(div_1);
 tasks_undone.appendChild(li_task);
+deleteUpdate();
+doneUpdate();
 badgeUpdate();
 descUpdate();
 })
+
 
 makeTask.addEventListener("click", ()=> {let tasks= document.getElementById("task-create");
 if(tasks.className.includes('show')) {tasks.classList.replace("show","none")}});
