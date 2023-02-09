@@ -171,5 +171,6 @@ padding: 0.3rem;
 @media screen and (max-width: 768px) {
     html, div.container{
        font-size: 10px;
+       height: auto;
     }
 }
