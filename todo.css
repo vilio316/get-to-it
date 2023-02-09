@@ -1,7 +1,7 @@
+body{justify-content: center; align-items: center; height: 100vh;}
 div.container{
     width: 80vw;
     height: 90vh;
-    margin: auto;
     background-color: antiquewhite;
     border-radius: 1.5rem;
     box-shadow: 0.35rem 0.35rem rgba(0,0, 200, 0.5) ;
@@ -171,6 +171,6 @@ padding: 0.3rem;
 @media screen and (max-width: 768px) {
     html, div.container{
        font-size: 10px;
-       height: 60vh;
+       height: 70vh;
     }
 }
