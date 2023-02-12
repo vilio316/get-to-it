@@ -172,7 +172,6 @@ deleteUpdate();
 doneUpdate();
 badgeUpdate();
 descUpdate();
-task_name.value =""; task_description.value = "";
 })
 
 
