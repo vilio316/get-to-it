@@ -142,7 +142,6 @@ let  makeTask = document.querySelector("#make-task");
 makeTask.addEventListener("click", ()=> {
     let task_name = document.getElementById("task-name");
     let task_description = document.getElementById("task-desc");
-    task_name.value =""; task_description.value = "";
     //Creating the "Task Tree":
     let li_task = document.createElement("li");
     li_task.classList.add("task");
@@ -173,6 +172,7 @@ deleteUpdate();
 doneUpdate();
 badgeUpdate();
 descUpdate();
+task_name.value =""; task_description.value = "";
 })
 
 
