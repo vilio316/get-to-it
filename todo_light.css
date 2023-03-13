@@ -63,9 +63,6 @@ section {
 #slider img {
   width: 66%;
 }
-#slider {
-  transition: all 0.5s ease-in-out;
-}
 .not {
   box-shadow: 0.2rem 0.2rem black;
   border-radius: 50%;
